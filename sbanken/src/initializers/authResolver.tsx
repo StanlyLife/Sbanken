@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+import { useApiStore } from '../stores/useApiStore';
 import apiKey, { apiSecret } from '../utils/secrets';
 const axios = require('axios');
 
 export const authResolver = () => {
+    const { setBearerToken_store } = useApiStore();
     useEffect(() => {
         initializer();
     }, []);
@@ -23,7 +25,7 @@ export const authResolver = () => {
         };
         axios(axiosConfig).then(
             (res: any) => {
-                console.log(res.data.access_token);
+                setBearerToken_store(res.data.access_token);
             },
             (err: any) => {
                 console.log('error retrieving auth token');
