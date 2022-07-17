@@ -1,28 +1,21 @@
 import { useEffect } from 'react';
+import AccountItem from '../interfaces/accountItem';
+import { useApiStore } from '../stores/useApiStore';
+import { getAxiosConfig } from '../utils/getAxiosConfig';
 import { baseUrl, getAccountsUrl } from '../utils/sbankenApi';
 const axios = require('axios');
-
-export const accountResolver = () => {
+export const AccountResolver = () => {
+    const { bearerToken_store, setAccounts_store, accounts_store } = useApiStore();
     useEffect(() => {
+        console.log(bearerToken_store);
         initializer();
-    }, []);
+    }, [bearerToken_store]);
     const initializer = async () => {
         const url = baseUrl + getAccountsUrl;
-        const headers = {
-            Authorization: 'Bearer ' + basicAuthentationHeaderValue,
-            Accept: 'application/json',
-            'Content-Type': 'application/x-www-form-urlencoded',
-        };
-
-        const axiosConfig = {
-            method: 'post',
-            url: url,
-            headers: headers,
-            data: 'grant_type=client_credentials',
-        };
-        axios(axiosConfig).then(
+        axios(getAxiosConfig('get', url, bearerToken_store)).then(
             (res: any) => {
-                console.log(res.data.access_token);
+                console.log('got accounts');
+                setAccounts_store(res.data.items);
             },
             (err: any) => {
                 console.log('error retrieving auth token');
@@ -30,4 +23,21 @@ export const accountResolver = () => {
             },
         );
     };
+    return (
+        <>
+            <h1>
+                {accounts_store &&
+                    accounts_store.map((account: AccountItem) => {
+                        console.log(account);
+                        return (
+                            <>
+                                <p>{account.accountNumber}</p>
+                                <p>{account.available}</p>
+                                <p>{account.balance}</p>
+                            </>
+                        );
+                    })}
+            </h1>
+        </>
+    );
 };
