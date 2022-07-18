@@ -11,6 +11,9 @@ export const apiStore = create(
         setAccounts_store: (data) => set({ accounts_store: data }, false, 'set account data'),
         //Transactions
         transactions_store: '',
-        setTransactions_store: (data) => set({ transactions_store: data }, false, 'set transaction data'),
+        setTransactions_store: (data) => set({ transactions_store: data }, false, 'set transactions data'),
+        //Transaction data
+        transaction_data_store: '',
+        setTransaction_data_store: (data) => set({ transaction_data_store: data }, false, 'set transaction data'),
     })),
 );

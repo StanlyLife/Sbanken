@@ -9,4 +9,7 @@ export const useApiStore = () => ({
     // Transactions
     transactions_store: apiStore((state) => state.transactions_store),
     setTransactions_store: apiStore((state) => state.setTransactions_store),
+    // Transaction Data
+    transaction_data_store: apiStore((state) => state.transaction_data_store),
+    setTransaction_data_store: apiStore((state) => state.setTransaction_data_store),
 });
