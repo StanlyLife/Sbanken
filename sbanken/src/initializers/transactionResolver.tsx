@@ -5,11 +5,12 @@ import { getAxiosConfig } from '../utils/getAxiosConfig';
 import { baseUrl, getTransactionsUrl } from '../utils/sbankenApi';
 const axios = require('axios');
 export const TransactionResolver = () => {
-    const { bearerToken_store, accounts_store, setTransactions_store, transactions_store } = useApiStore();
+    const { bearerToken_store, accounts_store, setTransactions_store, transactions_store, setTransaction_data_store } =
+        useApiStore();
     useEffect(() => {
         if (transactions_store) {
             const result = transactionReducer(transactions_store.items);
-            console.log(result);
+            setTransaction_data_store(result);
         }
     }, [transactions_store]);
     useEffect(() => {
