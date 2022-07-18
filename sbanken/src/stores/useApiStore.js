@@ -6,4 +6,7 @@ export const useApiStore = () => ({
     // Account
     accounts_store: apiStore((state) => state.accounts_store),
     setAccounts_store: apiStore((state) => state.setAccounts_store),
+    // Transactions
+    transactions_store: apiStore((state) => state.transactions_store),
+    setTransactions_store: apiStore((state) => state.setTransactions_store),
 });
