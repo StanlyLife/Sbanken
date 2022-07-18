@@ -1,0 +1,15 @@
+.overview-progress-component {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    .progress-bar {
+        max-width: 18%;
+        h3,
+        p,
+        strong {
+            text-align: center;
+        }
+    }
+}
