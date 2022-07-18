@@ -18,8 +18,6 @@ export const TransactionResolver = () => {
         if (!accounts_store) console.log('accounts not set!');
     }, [accounts_store]);
     const initializer = async () => {
-        console.log('accounts_store');
-        console.log(accounts_store);
         const url = baseUrl + getTransactionsUrl + accounts_store[0].accountId;
         axios(getAxiosConfig('get', url, bearerToken_store)).then(
             (res: any) => {
