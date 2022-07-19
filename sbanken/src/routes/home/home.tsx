@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
+import { OverviewProgress } from './overviewProgress/overviewProgress';
 export const Home = () => {
-  console.log("saasda");
-  return (
-    <>
-      <h1>testsdfs</h1>
-    </>
-  );
+    return (
+        <>
+            <OverviewProgress />
+        </>
+    );
 };
