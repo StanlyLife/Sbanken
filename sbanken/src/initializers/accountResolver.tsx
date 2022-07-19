@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
-import AccountItem from '../interfaces/accountItem';
 import { useApiStore } from '../stores/useApiStore';
 import { getAxiosConfig } from '../utils/getAxiosConfig';
 import { baseUrl, getAccountsUrl } from '../utils/sbankenApi';
 const axios = require('axios');
 export const AccountResolver = () => {
-    const { bearerToken_store, setAccounts_store, accounts_store } = useApiStore();
+    const { bearerToken_store, setAccounts_store } = useApiStore();
     useEffect(() => {
         initializer();
     }, [bearerToken_store]);
@@ -23,18 +22,16 @@ export const AccountResolver = () => {
     };
     return (
         <>
-            <h1>
-                {accounts_store &&
-                    accounts_store.map((account: AccountItem) => {
-                        return (
-                            <>
-                                <p>{account.accountNumber}</p>
-                                <p>{account.available}</p>
-                                <p>{account.balance}</p>
-                            </>
-                        );
-                    })}
-            </h1>
+            {/* {accounts_store &&
+                accounts_store.map((account: AccountItem) => {
+                    return (
+                        <div>
+                            <p>{account.accountNumber}</p>
+                            <p>{account.available}</p>
+                            <p>{account.balance}</p>
+                        </div>
+                    );
+                })} */}
         </>
     );
 };
