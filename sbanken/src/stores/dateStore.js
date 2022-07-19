@@ -1,7 +1,7 @@
 import create from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-export const apiStore = create(
+export const dateStore = create(
     devtools((set, get) => ({
         //date
         date_store: '',

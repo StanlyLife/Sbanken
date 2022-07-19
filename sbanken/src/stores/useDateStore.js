@@ -1,6 +1,6 @@
-import { apiStore } from './apiStore';
-export const useApiStore = () => ({
+import { dateStore } from './dateStore';
+export const useDateStore = () => ({
     // date
-    date_store: apiStore((state) => state.date_store),
-    setDate_store: apiStore((state) => state.setDate_store),
+    date_store: dateStore((state) => state.date_store),
+    setDate_store: dateStore((state) => state.setDate_store),
 });
