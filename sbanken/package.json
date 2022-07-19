@@ -12,6 +12,7 @@
         "@types/jest": "^27.5.2",
         "@types/node": "^16.11.43",
         "@types/react": "^18.0.15",
+        "@types/react-date-range": "^1.4.4",
         "@types/react-dom": "^18.0.6",
         "ag-grid-community": "^28.0.0",
         "ag-grid-react": "^28.0.0",
