@@ -1,0 +1,13 @@
+.home-component {
+    header {
+        background-color: var(--color_b_100);
+        text-align: center;
+        padding: 12px;
+        border-bottom: 3px solid var(--color_c_100);
+        .title {
+            color: var(--color_a_100);
+            text-transform: uppercase;
+            font-family: 'Red Hat Display', sans-serif;
+        }
+    }
+}
