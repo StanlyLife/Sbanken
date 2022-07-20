@@ -20,10 +20,13 @@ export const TransactionResolver = () => {
         if (!accounts_store) console.log('accounts not set!');
     }, [accounts_store, date_store]);
     const initializer = async () => {
-        const earliestDate = startDate_store < endDate_store ? startDate_store : endDate_store;
-        const latestDate = earliestDate < endDate_store ? endDate_store : startDate_store;
-        const url =
-            baseUrl + getTransactionsUrl + accounts_store[0].accountId + `/?startDate=${earliestDate}&endDate=${latestDate}`;
+        let url = baseUrl + getTransactionsUrl + accounts_store[0].accountId;
+        if (startDate_store && endDate_store) {
+            const earliestDate = startDate_store < endDate_store ? startDate_store : endDate_store;
+            const latestDate = earliestDate < endDate_store ? endDate_store : startDate_store;
+            url += `/?startDate=${earliestDate}&endDate=${latestDate}`;
+        }
+        console.log(date_store);
         axios(getAxiosConfig('get', url, bearerToken_store)).then(
             (res: any) => {
                 setTransactions_store(res.data);
