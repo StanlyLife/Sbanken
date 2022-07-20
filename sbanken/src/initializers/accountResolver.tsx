@@ -15,8 +15,9 @@ export const AccountResolver = () => {
                 setAccounts_store(res.data.items);
             },
             (err: any) => {
-                console.log('error retrieving auth token');
+                console.log('error account data');
                 console.log(err);
+                console.log(`status: ${err.response.status} - message: ${err.response.statusText}`);
             },
         );
     };
