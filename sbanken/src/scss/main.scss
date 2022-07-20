@@ -9,15 +9,23 @@
     font-family: 'Red Hat Display', sans-serif;
 }
 
+:root {
+    --color_a_100: #ffffff;
+    --color_b_100: #262342;
+    --color_c_100: #32fcb3;
+}
+
 p,
 a {
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .App-Root {
-    height: 100vh;
-    background-color: #333;
-    color: whitesmoke;
+    background-color: var(--color_a_100);
+    color: var(--color_b_100);
+}
+main {
+    max-height: 100vh;
 }
 a {
     color: whitesmoke;
