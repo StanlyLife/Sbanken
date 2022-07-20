@@ -1,7 +1,7 @@
 import create from 'zustand';
 import { devtools } from 'zustand/middleware';
 const selectionRange = {
-    startDate: new Date(),
+    startDate: new Date(new Date().setDate(new Date().getDate() - 30)),
     endDate: new Date(),
     key: 'selection',
 };
