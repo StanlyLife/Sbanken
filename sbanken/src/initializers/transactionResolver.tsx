@@ -26,7 +26,6 @@ export const TransactionResolver = () => {
             const latestDate = earliestDate < endDate_store ? endDate_store : startDate_store;
             url += `/?startDate=${earliestDate}&endDate=${latestDate}`;
         }
-        console.log(date_store);
         axios(getAxiosConfig('get', url, bearerToken_store)).then(
             (res: any) => {
                 setTransactions_store(res.data);
@@ -38,9 +37,5 @@ export const TransactionResolver = () => {
             },
         );
     };
-    return (
-        <>
-            <h1>test</h1>
-        </>
-    );
+    return <></>;
 };
