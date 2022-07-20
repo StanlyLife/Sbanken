@@ -1,6 +1,7 @@
 import { DateRangePicker } from 'react-date-range';
 import { formatDateToIso } from '../../../services/formatDateToIso';
 import { useDateStore } from '../../../stores/useDateStore';
+import './dateSelector.scss';
 export const DateSelector = () => {
     const { date_store, setDate_store, setStartDate_store, setEndDate_store } = useDateStore();
     const handleSelect = (date: any) => {
@@ -18,5 +19,11 @@ export const DateSelector = () => {
         setEndDate_store(formatDateToIso([date.selection][0].endDate));
     };
 
-    return <>{date_store && <DateRangePicker ranges={date_store} onChange={handleSelect} />}</>;
+    return (
+        <>
+            {date_store && (
+                <DateRangePicker className='date-selector-component' ranges={date_store} onChange={handleSelect} />
+            )}
+        </>
+    );
 };
