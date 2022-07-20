@@ -6,10 +6,19 @@
     justify-content: space-evenly;
     height: auto;
     .progress-bar {
-        max-width: 18%;
+        width: 10%;
+        max-width: 150px;
+        min-width: 125px;
+        .CircularProgressbar-trail {
+            stroke: var(--color_b_100);
+        }
+        .CircularProgressbar-path {
+            stroke: var(--color_c_100);
+        }
         h3,
         p,
         strong {
+            font-size: 13px;
             text-align: center;
         }
     }

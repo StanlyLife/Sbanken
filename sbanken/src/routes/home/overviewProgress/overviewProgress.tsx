@@ -19,8 +19,11 @@ export const OverviewProgress = () => {
 
     const initTransactionData = () => {
         let data = Object.entries(transaction_data_store).map((e) => ({ [e[0]]: e[1] }));
-        if (minimumLimitPercentage > 0)
+        if (minimumLimitPercentage > 0) {
             data = transactionDataPercentageExceder(data, getTotalSpending(), minimumLimitPercentage);
+        }
+        console.log(data);
+        data.sort((a: any, b: any) => a[Object.keys(a) as any].amount - b[Object.keys(b) as any].amount);
         setTransactionData(data);
     };
 
@@ -47,11 +50,9 @@ export const OverviewProgress = () => {
                             <CircularProgressbarWithChildren
                                 value={percentageOfTotalSpent}
                                 styles={buildStyles({
-                                    pathColor: 'red',
-                                    trailColor: '#111',
                                     pathTransitionDuration: 0.5,
                                 })}
-                                strokeWidth={4}
+                                strokeWidth={6}
                             >
                                 <h3>{`${name}`}</h3>
                                 <p>{`${Math.round(Math.abs(obj.amount))}kr`}</p>
