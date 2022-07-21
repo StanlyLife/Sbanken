@@ -1,1 +1,1 @@
-export const TransactionBlackList = ['Vipps straksbet.'];
+export const TransactionBlackList = ['Vipps straksbet.', 'Overførsel', 'Varekjøp', 'Overføring'];
