@@ -1,4 +1,8 @@
+$sidebar-width: 150px;
 .home-component {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     header {
         background-color: var(--color_b_100);
         text-align: center;
@@ -9,5 +13,22 @@
             text-transform: uppercase;
             font-family: 'Red Hat Display', sans-serif;
         }
+    }
+    .home-component-sidebar {
+        flex-shrink: 0;
+        position: fixed;
+        left: 0;
+        z-index: 100;
+        background-color: var(--color_a_100);
+        border-right: 2px solid var(--color_c_100);
+        color: var(--color_b_100);
+        padding: 12px;
+        bottom: 0;
+        height: 100vh;
+        width: $sidebar-width;
+    }
+    .home-component-main {
+        width: calc(100% - $sidebar-width);
+        margin-left: $sidebar-width;
     }
 }
