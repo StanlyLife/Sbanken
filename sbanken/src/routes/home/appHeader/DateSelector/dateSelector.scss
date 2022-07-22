@@ -1,0 +1,15 @@
+.date-selector-component {
+    background-color: rgba(51, 51, 51, 0.596);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .date-selector {
+        border-bottom: 2px solid var(--color_b_100);
+        top: 50vh;
+        z-index: 2;
+    }
+}
