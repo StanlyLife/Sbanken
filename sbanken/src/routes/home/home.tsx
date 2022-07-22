@@ -1,12 +1,11 @@
 import React from 'react';
 import { OverviewProgress } from './overviewProgress/overviewProgress';
 import './home.scss';
+import { AppHeader } from './appHeader/appHeader';
 export const Home = () => {
     return (
         <div className='home-component'>
-            <header>
-                <h1 className='title'>Sbanken forbruk</h1>
-            </header>
+            <AppHeader />
             <OverviewProgress />
         </div>
     );
