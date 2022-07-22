@@ -1,0 +1,17 @@
+.app-header-component {
+    position: relative;
+    .calendar-button {
+        position: absolute;
+        font-size: 24px;
+        background-color: transparent;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--color_c_100);
+        right: 24px;
+        transition: color 0.25s ease;
+        &:hover {
+            cursor: pointer;
+            color: var(--color_a_100);
+        }
+    }
+}
