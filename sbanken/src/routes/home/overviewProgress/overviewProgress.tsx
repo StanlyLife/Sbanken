@@ -4,7 +4,6 @@ import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-pro
 import './overviewProgress.scss';
 import { TransactionDataItem } from '../../../interfaces/transactionDataItem';
 import { transactionDataPercentageExceder } from '../../../services/transactionDataPercentageExceeder';
-import { DateSelector } from '../DateSelector/dateSelector';
 export const OverviewProgress = () => {
     const { transaction_data_store } = useApiStore();
     const [totalSpending, setTotalSpending] = useState<number>(0);
@@ -37,7 +36,6 @@ export const OverviewProgress = () => {
 
     return (
         <div className='overview-progress-component'>
-            <DateSelector />
             {transactionData &&
                 transactionData.map((transactionCategory: any) => {
                     const name = Object.keys(transactionCategory)[0];
