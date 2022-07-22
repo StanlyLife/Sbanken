@@ -1,3 +1,13 @@
 .transaction-summary-grid-component {
-    border: 2px solid red;
+    width: 100%;
+    .ag-cell {
+        color: var(--color_b_100);
+    }
+    #transaction-summary-grid {
+        .ag-header-row,
+        .ag-header-viewport {
+            background-color: var(--color_b_100);
+            color: var(--color_c_100);
+        }
+    }
 }
