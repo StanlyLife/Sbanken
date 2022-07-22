@@ -7,6 +7,8 @@ import './scss/main.scss';
 import 'react-circular-progressbar/dist/styles.css';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import 'ag-grid-community/styles/ag-grid.css';
+import 'ag-grid-community/styles/ag-theme-alpine.css';
 function App() {
     authResolver();
     return (
