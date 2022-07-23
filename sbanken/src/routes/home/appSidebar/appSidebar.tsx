@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faInfoCircle, faTable, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faInfoCircle, faTable } from '@fortawesome/free-solid-svg-icons';
 import './appSidebar.scss';
 import { NavLink } from 'react-router-dom';
 export const AppSidebar = () => {
@@ -9,12 +9,8 @@ export const AppSidebar = () => {
                 <div className='title'>
                     <h1>Sbanken</h1>
                     <h1>Forbruk</h1>
-                    <div className='border'></div>
+                    {/* <div className='border'></div> */}
                 </div>
-                <div className='picture'>
-                    <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
-                </div>
-                <div className='name'>{/* <p>Stian Håve</p> */}</div>
             </div>
             <div className='links'>
                 <div className='border'></div>

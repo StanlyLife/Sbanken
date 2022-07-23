@@ -11,6 +11,7 @@ export const Creaditcard = ({
     available: string;
 }) => {
     const accountNumberWithSpaces = accountNumber.replace(/\d{4}(?=.)/g, '$& ');
+    //https://codepen.io/maahi21/pen/rNWzdjG
     return (
         <div className='credit-card-component'>
             <div className='main'>

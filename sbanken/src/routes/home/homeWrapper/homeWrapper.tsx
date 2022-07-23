@@ -1,11 +1,13 @@
 import { Creaditcard } from '../../../components/creditcard/creditcard';
 import { useApiStore } from '../../../stores/useApiStore';
+import { SpendingGraph } from '../spendingGraph/spendingGraph';
 import { SpendingOverview } from '../spendingOverview/spendingOverview';
+import './homeWrapper.scss';
 
 export const HomeWrapper = () => {
     const { accounts_store } = useApiStore();
     return (
-        <>
+        <div className='home-wrapper-component'>
             {/* <OverviewProgress /> */}
             {/* <TransactionSummaryGrid />
             <TransactionGrid /> */}
@@ -21,7 +23,11 @@ export const HomeWrapper = () => {
                         />
                     ))}
             </div>
-            <SpendingOverview></SpendingOverview>
-        </>
+
+            <div className='spending-info'>
+                <SpendingOverview></SpendingOverview>
+                <SpendingGraph></SpendingGraph>
+            </div>
+        </div>
     );
 };

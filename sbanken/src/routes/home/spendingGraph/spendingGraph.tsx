@@ -4,6 +4,8 @@ import { useApiStore } from '../../../stores/useApiStore';
 import { transactionItem } from '../spendingOverview/transactionItem';
 import './spendingGraph.scss';
 
+//TODO REFACTOR COMPONENT!!!!
+
 export const SpendingGraph = () => {
     const { transaction_data_store } = useApiStore();
     const [data, setData] = useState<Array<transactionItem>>();
@@ -11,7 +13,6 @@ export const SpendingGraph = () => {
     const getTotalAmountOfSpending = () => {
         if (data)
             return data?.reduce((acc: number, curr: transactionItem) => {
-                console.log(curr.amount);
                 if (curr && curr.amount < 0) acc += curr.amount;
                 return acc;
             }, 0);
@@ -45,11 +46,11 @@ export const SpendingGraph = () => {
                                 (Math.abs(transaction.amount) / Math.abs(totalSpending)) * 100,
                             );
                             return (
-                                <div className='transaction'>
+                                <div className='transaction' key={transaction.name}>
                                     <div className='data'>
                                         <p className='name'>{transaction.name}</p>
                                         <p>
-                                            {transaction.amount}kr / {percentageOfTotalSpending}%
+                                            {Math.round(transaction.amount)}kr / {percentageOfTotalSpending}%
                                         </p>
                                     </div>
                                     <div

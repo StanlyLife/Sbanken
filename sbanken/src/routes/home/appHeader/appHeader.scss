@@ -8,19 +8,11 @@
         font-family: 'Red Hat Display', sans-serif;
         font-family: 'Poppins', sans-serif;
     }
-    .border-bottom {
-        border-bottom: 3px solid var(--color_c_100);
-        height: 10px;
-        width: 100px;
-        background-color: red;
-        width: 33%;
-        margin: 0 auto;
-    }
     .calendar-button {
         position: absolute;
         font-size: 24px;
         background-color: transparent;
-        top: 50%;
+        top: 45%;
         transform: translateY(-50%);
         color: var(--color_c_100);
         right: 24px;

@@ -41,7 +41,7 @@ export const SpendingOverview = () => {
                                     </div>
                                     <div className='column'>
                                         <p className='title'>Overførte kroner</p>
-                                        <p className='value'>{transaction.amount}kr</p>
+                                        <p className='value'>{Math.round(transaction.amount)}kr</p>
                                     </div>
                                 </div>
                                 <div className='p2'>
