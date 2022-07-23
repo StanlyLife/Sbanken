@@ -1,5 +1,16 @@
 import './creditcard.scss';
-export const Creaditcard = () => {
+export const Creaditcard = ({
+    accountNumber,
+    balance,
+    name,
+    available,
+}: {
+    accountNumber: string;
+    balance: string;
+    name: string;
+    available: string;
+}) => {
+    const accountNumberWithSpaces = accountNumber.replace(/\d{4}(?=.)/g, '$& ');
     return (
         <div className='credit-card-component'>
             <div className='main'>
@@ -14,10 +25,10 @@ export const Creaditcard = () => {
                         src='https://raw.githubusercontent.com/dasShounak/freeUseImages/main/chip.png'
                         width='40'
                     />
-                    <div className='number'>1234 5678 91012 3456</div>
-                    <div className='name'>MAAHI</div>
-                    <div className='from'>01/21</div>
-                    <div className='to'>12/25</div>
+                    <div className='number'>{accountNumberWithSpaces}</div>
+                    <div className='name'>{name}</div>
+                    <div className='from'>{balance}kr</div>
+                    <div className='to'>{available}kr</div>
                 </div>
             </div>
         </div>
