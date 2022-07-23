@@ -1,0 +1,23 @@
+.spending-graph-component {
+    .transaction-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+    .transaction {
+        display: flex;
+        flex-direction: column;
+        .data {
+            display: flex;
+            justify-content: space-between;
+            .name {
+                font-weight: 600;
+            }
+        }
+        .transaction-line {
+            height: 8px;
+            background-color: #1da1f2;
+            border-radius: 0 4px 4px 0;
+        }
+    }
+}
