@@ -4,7 +4,7 @@ import { getAxiosConfig } from '../utils/getAxiosConfig';
 import { baseUrl, getAccountsUrl } from '../utils/sbankenApi';
 const axios = require('axios');
 export const AccountResolver = () => {
-    const { bearerToken_store, setAccounts_store } = useApiStore();
+    const { bearerToken_store, setAccounts_store, setActiveAccount_store } = useApiStore();
     useEffect(() => {
         initializer();
     }, [bearerToken_store]);
@@ -13,6 +13,9 @@ export const AccountResolver = () => {
         axios(getAxiosConfig('get', url, bearerToken_store)).then(
             (res: any) => {
                 setAccounts_store(res.data.items);
+                if (res.data.items.length > 0) {
+                    setActiveAccount_store(res.data.items[0]);
+                }
                 console.log(res.data.items);
             },
             (err: any) => {

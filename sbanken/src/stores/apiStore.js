@@ -9,6 +9,9 @@ export const apiStore = create(
         //Accounts
         accounts_store: '',
         setAccounts_store: (data) => set({ accounts_store: data }, false, 'set account data'),
+        //Active Account
+        activeAccount_store: '',
+        setActiveAccount_store: (data) => set({ activeAccount_store: data }, false, 'set account data'),
         //Transactions
         transactions_store: '',
         setTransactions_store: (data) => set({ transactions_store: data }, false, 'set transactions data'),
