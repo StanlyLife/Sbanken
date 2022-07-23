@@ -1,0 +1,85 @@
+.spending-overview-component {
+    width: 45%;
+    min-width: 580px;
+    margin: 0 auto;
+    .icon {
+        background: var(--color_a_200);
+        &.food {
+            background: #fad390;
+        }
+        &.unknown {
+            background: #a66acc;
+        }
+        &.recreation {
+            background: #b4e3e9;
+        }
+        &.transport {
+            background: #eaeda2;
+        }
+        &.games {
+            background: #ddc1d9;
+        }
+        &.learning {
+            background: #b8e994;
+        }
+        &.vipps {
+            background: #edb87c;
+        }
+        &.undefined {
+            background: #a4b0be;
+        }
+    }
+    .icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 500px;
+        &.in {
+            background-color: var(--color_c_100);
+            color: var(--color_a_100);
+        }
+        &.out {
+            background-color: var(--color_b_100);
+            color: var(--color_a_100);
+        }
+    }
+    .transactions-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .transaction {
+        &:hover {
+            background-color: var(--color_a_200);
+        }
+        padding: 12px 8px;
+        display: flex;
+        gap: 12px;
+        width: auto;
+        // box-shadow: var(--shadow_3);
+        align-items: center;
+        .info {
+            flex: 1 0 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+        .p1,
+        .p2 {
+            flex: 1 0 0px;
+            .column {
+                display: flex;
+                gap: 8px;
+                .title {
+                    font-weight: 600;
+                }
+            }
+            .value.name {
+                font-weight: 600;
+                color: var(--color_b_100);
+            }
+        }
+    }
+}
