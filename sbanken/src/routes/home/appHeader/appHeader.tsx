@@ -12,12 +12,9 @@ export const AppHeader = () => {
                 <button className='calendar-button' onClick={() => setDisplayCalendar((prev: boolean) => !prev)}>
                     <FontAwesomeIcon icon={faCalendarAlt} />
                 </button>
+                <span className='border-bottom'></span>
             </header>
-            {displayCalendar && (
-                <>
-                    <DateSelector setDisplayCalendar={setDisplayCalendar} />
-                </>
-            )}
+            {displayCalendar && <DateSelector setDisplayCalendar={setDisplayCalendar} />}
         </>
     );
 };
