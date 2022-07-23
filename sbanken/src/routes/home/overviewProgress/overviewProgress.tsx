@@ -4,8 +4,6 @@ import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-pro
 import './overviewProgress.scss';
 import { TransactionDataItem } from '../../../interfaces/transactionDataItem';
 import { transactionDataPercentageExceder } from '../../../services/transactionDataPercentageExceeder';
-import { TransactionSummaryGrid } from './grids/transactionSummaryGrid/transactionSummaryGrid';
-import { TransactionGrid } from './grids/transactionGrid/transactionGrid';
 export const OverviewProgress = () => {
     const { transaction_data_store } = useApiStore();
     const [totalSpending, setTotalSpending] = useState<number>(0);
@@ -60,8 +58,6 @@ export const OverviewProgress = () => {
                         </div>
                     );
                 })}
-            <TransactionSummaryGrid />
-            <TransactionGrid />
         </div>
     );
 };

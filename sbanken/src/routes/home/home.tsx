@@ -1,8 +1,8 @@
 import React from 'react';
-import { OverviewProgress } from './overviewProgress/overviewProgress';
 import './home.scss';
 import { AppHeader } from './appHeader/appHeader';
 import { AppSidebar } from './appSidebar/appSidebar';
+import { HomeWrapper } from './homeWrapper/homeWrapper';
 export const Home = () => {
     return (
         <div className='home-component'>
@@ -14,7 +14,7 @@ export const Home = () => {
                     <AppHeader />
                 </div>
                 <div className='home-component-overview'>
-                    <OverviewProgress />
+                    <HomeWrapper />
                 </div>
             </div>
         </div>
