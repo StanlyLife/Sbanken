@@ -15,7 +15,6 @@ export const SpendingOverview = () => {
     useEffect(() => {
         const data = Object.entries(transaction_data_store).map((e) => ({ [e[0]]: e[1] }));
         const transactionData = transactionReducedDataToGridData(data);
-        console.log(transactionData);
         setData(transactionData);
     }, [transaction_data_store]);
     const getTransactionIcon = (state: boolean, name: string) => {
@@ -32,8 +31,8 @@ export const SpendingOverview = () => {
         <div className='spending-overview-component'>
             <div className='transactions-wrapper'>
                 {data &&
-                    data.map((transaction: transactionItem) => (
-                        <div className='transaction'>
+                    data.map((transaction: transactionItem, idx: number) => (
+                        <div className='transaction' key={idx}>
                             {getTransactionIcon(transaction.amount > 0, transaction.name)}
                             <div className='info'>
                                 <div className='p1'>
