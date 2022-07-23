@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faInfoCircle, faTable, faUser } from '@fortawesome/free-solid-svg-icons';
 import './appSidebar.scss';
 import { NavLink } from 'react-router-dom';
 export const AppSidebar = () => {
@@ -14,14 +14,27 @@ export const AppSidebar = () => {
                 <div className='picture'>
                     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
                 </div>
-                <div className='name'>
-                    <p>Stian Håve</p>
-                </div>
+                <div className='name'>{/* <p>Stian Håve</p> */}</div>
             </div>
             <div className='links'>
+                <div className='border'></div>
                 <NavLink className={(navData) => (navData.isActive ? 'link active' : 'link')} to='/'>
-                    <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
-                    <p>Home</p>
+                    <div>
+                        <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
+                        Home
+                    </div>
+                </NavLink>
+                <NavLink className={(navData) => (navData.isActive ? 'link active' : 'link')} to='/b'>
+                    <div>
+                        <FontAwesomeIcon icon={faTable}></FontAwesomeIcon>
+                        Grids
+                    </div>
+                </NavLink>
+                <NavLink className={(navData) => (navData.isActive ? 'link active' : 'link')} to='/a'>
+                    <div>
+                        <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>
+                        Information
+                    </div>
                 </NavLink>
             </div>
         </aside>

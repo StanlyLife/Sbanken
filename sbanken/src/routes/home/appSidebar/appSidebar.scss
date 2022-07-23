@@ -1,0 +1,71 @@
+.app-sidebar-component {
+    background-color: var(--color_a_200);
+    color: var(--color_b_100);
+    height: 100%;
+    .title {
+        padding: 12px;
+        padding-top: 4px;
+        text-align: center;
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            line-height: 32px;
+        }
+        .border {
+            width: 75%;
+            height: 2px;
+            background-color: var(--color_b_100);
+            border-radius: 500px;
+            margin: 8px auto;
+        }
+    }
+    .profile {
+        padding: 12px;
+        .picture {
+            border: 2px solid var(--color_c_100);
+            height: 150px;
+            width: 150px;
+            margin: 0 auto;
+            font-size: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 500px;
+            overflow: hidden;
+            background-color: var(--color_b_100);
+            color: var(--color_c_100);
+        }
+    }
+    .links {
+        .border {
+            width: 75%;
+            height: 2px;
+            background-color: var(--color_b_100);
+            border-radius: 500px;
+            margin: 8px auto;
+        }
+        .link {
+            div {
+                padding: 12px 8px;
+                width: 100%;
+                background-color: var(--color_a_200);
+                color: var(--color_b_100);
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                border-left: 4px solid var(--color_a_100);
+                transition: all 0.25s ease;
+                svg {
+                    padding-right: 4px;
+                }
+            }
+            &.active div {
+                background-color: var(--color_a_100);
+                color: var(--color_b_100);
+                border-left: 4px solid var(--color_c_100);
+            }
+            &:hover div {
+                border-left: 4px solid var(--color_b_100);
+            }
+        }
+    }
+}
