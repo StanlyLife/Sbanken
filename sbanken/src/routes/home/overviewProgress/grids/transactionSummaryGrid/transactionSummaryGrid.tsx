@@ -5,16 +5,13 @@ import { useApiStore } from '../../../../../stores/useApiStore';
 import { transactionReducedDataToGridData } from '../../../../../services/transactionReducedDataToGridData';
 
 export const TransactionSummaryGrid = () => {
-    const { transaction_data_store, transactions_store } = useApiStore();
+    const { transaction_data_store } = useApiStore();
     const [rowData, setRowData] = useState<any>();
     useEffect(() => {
         const data = Object.entries(transaction_data_store).map((e) => ({ [e[0]]: e[1] }));
         const gridData = transactionReducedDataToGridData(data);
         setRowData(gridData);
     }, [transaction_data_store]);
-    useEffect(() => {
-        console.log(transactions_store.items);
-    }, [transactions_store]);
 
     const [columnDefs] = useState([
         { field: 'name', flex: 1 },

@@ -13,6 +13,7 @@ export const AccountResolver = () => {
         axios(getAxiosConfig('get', url, bearerToken_store)).then(
             (res: any) => {
                 setAccounts_store(res.data.items);
+                console.log(res.data.items);
             },
             (err: any) => {
                 console.log('error account data');

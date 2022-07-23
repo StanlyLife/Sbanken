@@ -1,9 +1,9 @@
 import React from 'react';
 import './home.scss';
-import { AppHeader } from './appHeader/appHeader';
 import { AppSidebar } from './appSidebar/appSidebar';
 import { HomeWrapper } from './homeWrapper/homeWrapper';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { AppHeader } from './appHeader/appHeader';
 export const Home = () => {
     return (
         <BrowserRouter>
