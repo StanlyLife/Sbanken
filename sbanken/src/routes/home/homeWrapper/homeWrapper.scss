@@ -1,0 +1,15 @@
+.home-wrapper-component {
+    .spending-info {
+        padding: 24px;
+        display: flex;
+        & > * {
+            flex: 1 0 0;
+            padding: 12px;
+        }
+    }
+    .accounts {
+        margin: 24px auto;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
