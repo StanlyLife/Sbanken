@@ -1,28 +1,15 @@
-$sidebar-width: 150px;
+$sidebar-width: 200px;
 .home-component {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     header {
-        background-color: var(--color_b_100);
-        text-align: center;
-        padding: 12px;
-        border-bottom: 3px solid var(--color_c_100);
-        .title {
-            color: var(--color_a_100);
-            text-transform: uppercase;
-            font-family: 'Red Hat Display', sans-serif;
-        }
     }
     .home-component-sidebar {
         flex-shrink: 0;
         position: fixed;
         left: 0;
-        z-index: 100;
-        background-color: var(--color_a_100);
-        border-right: 2px solid var(--color_c_100);
-        color: var(--color_b_100);
-        padding: 12px;
+        z-index: 9;
         bottom: 0;
         height: 100vh;
         width: $sidebar-width;

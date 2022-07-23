@@ -4,10 +4,17 @@
         color: var(--color_b_100);
     }
     #transaction-summary-grid {
+        .ag-header {
+            display: none;
+        }
         .ag-header-row,
         .ag-header-viewport {
-            background-color: var(--color_b_100);
-            color: var(--color_c_100);
+            background-color: transparent;
+            color: var(--color_b_100);
+        }
+        .ag-root-wrapper {
+            border: none;
+            border-bottom: 4px solid var(--color_b_100);
         }
     }
 }
