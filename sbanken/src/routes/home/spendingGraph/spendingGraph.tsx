@@ -32,7 +32,7 @@ export const SpendingGraph = () => {
             <div className='transaction-wrapper'>
                 {data &&
                     totalSpending &&
-                    data.map((transaction: transactionItem) => {
+                    data.map((transaction: transactionItem, idx: number) => {
                         //We do not want to display money in
                         const transactionIsCost = transaction.amount < 0;
                         if (transactionIsCost) {
@@ -61,7 +61,7 @@ export const SpendingGraph = () => {
                                 </div>
                             );
                         }
-                        return <></>;
+                        return <div key={idx}></div>;
                     })}
             </div>
         </div>
