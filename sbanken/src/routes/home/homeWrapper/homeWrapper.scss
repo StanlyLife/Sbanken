@@ -1,4 +1,11 @@
 .home-wrapper-component {
+    .top {
+        display: flex;
+        flex-wrap: nowrap;
+        & > * {
+            flex: 1 0 0px;
+        }
+    }
     .spending-info {
         padding: 24px;
         display: flex;
