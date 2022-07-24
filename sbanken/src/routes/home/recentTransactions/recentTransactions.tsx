@@ -47,7 +47,7 @@ export const RecentTransactions = () => {
                                 <div className='row'>
                                     <div className='group'>
                                         <p className='value' title={`transaksjonsnavn: ${transaction.text}`}>
-                                            {transaction.text.split(' ')[0]}
+                                            {transaction.text}
                                         </p>
 
                                         <p className='value' title='registrert dato'>
