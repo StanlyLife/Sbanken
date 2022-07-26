@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { transactionTypes } from '../../../enums/transactionTypes';
 import { useApiStore } from '../../../stores/useApiStore';
 import { TransactionTypeIconMapper } from '../../../utils/transactionTypeIconMapper';

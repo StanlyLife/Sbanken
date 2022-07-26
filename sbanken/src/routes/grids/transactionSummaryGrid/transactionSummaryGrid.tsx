@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import './transactionSummaryGrid.scss';
-import { useApiStore } from '../../../../../stores/useApiStore';
-import { transactionReducedDataToGridData } from '../../../../../services/transactionReducedDataToGridData';
+import { transactionReducedDataToGridData } from '../../../services/transactionReducedDataToGridData';
+import { useApiStore } from '../../../stores/useApiStore';
 
 export const TransactionSummaryGrid = () => {
     const { transaction_data_store } = useApiStore();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import { useApiStore } from '../../../../../stores/useApiStore';
+import { useApiStore } from '../../../stores/useApiStore';
 
 export const TransactionGrid = () => {
     const { transactions_store } = useApiStore();
