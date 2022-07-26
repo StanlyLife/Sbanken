@@ -4,6 +4,8 @@ import { AppSidebar } from './appSidebar/appSidebar';
 import { HomeWrapper } from './homeWrapper/homeWrapper';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AppHeader } from './appHeader/appHeader';
+import { Categories } from '../categories/categories';
+import { Grids } from '../grids/grids';
 export const Home = () => {
     return (
         <BrowserRouter>
@@ -18,6 +20,8 @@ export const Home = () => {
                     <div className='home-component-overview'>
                         <Routes>
                             <Route path='/' element={<HomeWrapper />} />
+                            <Route path='/categories' element={<Categories />} />
+                            <Route path='/grids' element={<Grids />} />
                         </Routes>
                     </div>
                 </div>

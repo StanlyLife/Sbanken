@@ -20,16 +20,16 @@ export const AppSidebar = () => {
                         Home
                     </div>
                 </NavLink>
-                <NavLink className={(navData) => (navData.isActive ? 'link active' : 'link')} to='/b'>
+                <NavLink className={(navData) => (navData.isActive ? 'link active' : 'link')} to='/grids'>
                     <div>
                         <FontAwesomeIcon icon={faTable}></FontAwesomeIcon>
-                        Grids
+                        Lister
                     </div>
                 </NavLink>
-                <NavLink className={(navData) => (navData.isActive ? 'link active' : 'link')} to='/a'>
+                <NavLink className={(navData) => (navData.isActive ? 'link active' : 'link')} to='/Categories'>
                     <div>
                         <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>
-                        Information
+                        Kategorier
                     </div>
                 </NavLink>
             </div>
