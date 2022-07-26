@@ -7,4 +7,9 @@ export enum transactionCategory {
     learning,
     vipps,
     other,
+    investment,
+    dining,
+    groceries,
+    home,
+    pet,
 }
