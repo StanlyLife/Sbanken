@@ -6,7 +6,8 @@
         &.food {
             background: #fad390;
         }
-        &.unknown {
+        &.unknown,
+        &.other {
             background: #a66acc;
         }
         &.recreation {

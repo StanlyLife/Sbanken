@@ -6,4 +6,5 @@ export enum transactionCategory {
     games,
     learning,
     vipps,
+    other,
 }
