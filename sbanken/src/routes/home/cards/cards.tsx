@@ -31,12 +31,13 @@ export const Cards = () => {
                           month: 'long',
                           day: 'numeric',
                       })
-                    : new Date().toLocaleDateString('no-nb', {
+                    : //Default date
+                      `${new Date().toLocaleDateString('no-nb', {
                           weekday: 'long',
                           year: 'numeric',
                           month: 'long',
                           day: 'numeric',
-                      })}
+                      })} - siste 30 dager`}
             </div>
         </div>
     );
