@@ -51,10 +51,10 @@ export const OverviewProgress = () => {
                                 })}
                                 strokeWidth={6}
                             >
-                                <h3>{`${name}`}</h3>
                                 <p>{`${Math.round(Math.abs(obj.amount))}kr`}</p>
                                 <strong>{`${percentageOfTotalSpent}%`}</strong>
                             </CircularProgressbarWithChildren>
+                            <h3>{`${name}`}</h3>
                         </div>
                     );
                 })}

@@ -5,6 +5,7 @@
     gap: 20px;
     justify-content: space-evenly;
     height: auto;
+    padding: 24px;
     .progress-bar {
         width: 10%;
         max-width: 150px;
@@ -20,6 +21,10 @@
         strong {
             font-size: 13px;
             text-align: center;
+            word-wrap: break-word;
+        }
+        h3 {
+            margin-top: 8px;
         }
     }
 }
