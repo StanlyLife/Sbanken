@@ -35,9 +35,16 @@ export const CategoryProgress = () => {
                     />
                 ))}
             </div>
-            <div className={`transaction-grid ${transactionGridOpen ? 'open' : 'closed'}`}>
-                <ProgressGrid setTransactionGridOpen={setTransactionGridOpen} />
-            </div>
+            {transactionGridOpen && (
+                <div
+                    className={`transaction-grid`}
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) setTransactionGridOpen(false);
+                    }}
+                >
+                    <ProgressGrid setTransactionGridOpen={setTransactionGridOpen} />
+                </div>
+            )}
         </div>
     );
 };

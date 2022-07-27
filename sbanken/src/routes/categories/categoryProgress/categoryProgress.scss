@@ -7,16 +7,17 @@
     .transaction-grid {
         flex-shrink: 0;
         overflow: hidden;
-        background-color: var(--color_b_100);
+        background-color: rgba(51, 51, 51, 0.596);
+        position: fixed;
+        width: 100%;
         color: var(--color_a_100);
         height: 100vh;
         right: 0;
         top: 0;
-        width: 0px;
-        z-index: 3;
+        z-index: 9;
         transition: all 0.5s ease;
-        &.open {
-            width: 500px;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
