@@ -47,6 +47,7 @@ export const TransactionTypeIconMapper = (t: string) => {
         home: <FontAwesomeIcon icon={faHouse} />,
         pet: <FontAwesomeIcon icon={faPaw} />,
         apple: <FontAwesomeIcon icon={faAppleAlt} />,
+        transfer: <FontAwesomeIcon icon={faMoneyBillTransfer} />,
     };
     const icon = iconTypes[t];
     return icon || <FontAwesomeIcon icon={faWarning} />;
