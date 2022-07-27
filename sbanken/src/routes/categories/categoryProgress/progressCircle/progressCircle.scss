@@ -1,0 +1,27 @@
+.category-progress-component {
+    width: 10%;
+    max-width: 150px;
+    min-width: 125px;
+    background-color: transparent;
+    transition: all 0.25s ease;
+    .CircularProgressbar-trail {
+        stroke: var(--color_b_100);
+    }
+    .CircularProgressbar-path {
+        stroke: var(--color_c_100);
+    }
+    h3,
+    p,
+    strong {
+        font-size: 13px;
+        text-align: center;
+        word-wrap: break-word;
+    }
+    h3 {
+        margin-top: 8px;
+    }
+    &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
