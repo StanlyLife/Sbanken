@@ -18,7 +18,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background-color: orange;
         h3,
         p,
         strong {
@@ -32,48 +31,9 @@
             height: 24px;
             color: var(--color_b_100);
         }
-        &.unknown {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.food {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.recreation {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.transport {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.games {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.learning {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.vipps {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.other {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.investment {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.dining {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.groceries {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.home {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.pet {
-            background-color: hsl(195, 11%, 93%);
-        }
-        &.apple {
-            background-color: hsl(195, 11%, 93%);
-        }
+
+        background-color: hsl(195, 11%, 93%);
+
         /*UNCOMMENT BELOW TO GET COLORED CATEGORIES*/
         // &.unknown {
         //     background-color: hsl(0, 0%, 83%);
