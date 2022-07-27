@@ -4,6 +4,7 @@ import { TransactionItem } from '../../../interfaces/transactionItem';
 import { useApiStore } from '../../../stores/useApiStore';
 import './categoryProgress.scss';
 import { ProgressCircle } from './progressCircle/progressCircle';
+import { ProgressGrid } from './progressGrid/progressGrid';
 import { getTransactionsWithCategories, getTransactionsGroupedInCategories } from './utils/categoryProgressUtils';
 
 export const CategoryProgress = () => {
@@ -35,8 +36,7 @@ export const CategoryProgress = () => {
                 ))}
             </div>
             <div className={`transaction-grid ${transactionGridOpen ? 'open' : 'closed'}`}>
-                <button onClick={() => setTransactionGridOpen((prev) => !prev)}>CLOSE</button>
-                <h1>transaction view</h1>
+                <ProgressGrid setTransactionGridOpen={setTransactionGridOpen} />
             </div>
         </div>
     );
