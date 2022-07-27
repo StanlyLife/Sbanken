@@ -13,4 +13,5 @@ export enum transactionCategory {
     home,
     pet,
     apple,
+    transfer,
 }
