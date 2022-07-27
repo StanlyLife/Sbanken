@@ -1,23 +1,22 @@
 .category-process-component {
+    display: flex;
     .progress-bar {
         max-width: 150px;
     }
 
     .transaction-grid {
+        flex-shrink: 0;
+        overflow: hidden;
         background-color: var(--color_b_100);
         color: var(--color_a_100);
         height: 100vh;
-        position: fixed;
         right: 0;
         top: 0;
-        width: 50vw;
-        min-width: 500px;
-        z-index: 2;
-        transition: all 1s ease;
-        transform: translateX(0);
-        overflow: auto;
+        width: 0px;
+        z-index: 3;
+        transition: all 0.5s ease;
         &.open {
-            transform: translateX(100vw);
+            width: 500px;
         }
     }
 }
