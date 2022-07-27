@@ -29,6 +29,9 @@ const category = {
     extra: transactionCategory.groceries,
     applestore: transactionCategory.apple,
     bensinstasjon: transactionCategory.transport,
+    transfer: transactionCategory.transfer,
+    recreation: transactionCategory.recreation,
+    bus: transactionCategory.transfer,
 };
 
 export const TransactionCategoryMapper = (name: string) => {
@@ -40,21 +43,24 @@ export const TransactionCategoryMapper = (name: string) => {
 //Created function for further improvements and changes to name mapper
 const getRealName = (name: string) => {
     const n = name.toLowerCase();
-    if (n.indexOf('fra: ') === 0 || n.indexOf('til: ') === 0) return 'vipps';
+    if ((n.indexOf('fra: ') === 0 || n.indexOf('til: ') === 0) && n.includes('betalt: ')) return 'transfer';
+    if (n.indexOf('fra: ') === 0 || n.indexOf('til: ') === 0 || n.startsWith('vipps ')) return 'vipps';
     if (n.includes('joker')) return 'joker';
     if (n.includes("mcdonald's")) return 'mcdonalds';
     if (n.includes('oda.com')) return 'oda';
     if (n.includes('digg pizza')) return 'digg';
-    if (n.includes('steamgames.com')) return 'steam';
+    if (n.includes('steamgames.com') || n.startsWith('steam purchase')) return 'steam';
     if (n.includes('verdipapirhandel')) return 'fond';
     if (n.includes('kiwi')) return 'kiwi';
     if (n.includes('clas ohl')) return 'clasohlson';
     if (n.includes('musti')) return 'musti';
     if (n.includes('odeon')) return 'odeon';
     if (n.includes('mix')) return 'mix';
-    if (n.includes('restaura')) return 'restaurant';
+    if (n.includes('restaura') || n.includes('pizza')) return 'restaurant';
     if (n.includes('extra')) return 'extra';
+    if (n.includes('hbo max')) return 'recreation';
     if (n.includes('apple.com')) return 'applestore';
     if (n.includes('circle k')) return 'bensinstasjon';
+    if (n.includes('nettbuss')) return 'bus';
     return name;
 };
