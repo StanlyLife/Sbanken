@@ -2,7 +2,8 @@ import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-pro
 import { transactionCategory } from '../../../../enums/transactionCategory';
 import { categoryItem } from '../../../../interfaces/categoryItem';
 import { useApiStore } from '../../../../stores/useApiStore';
-
+import { TransactionTypeIconMapper } from '../../../../utils/transactionTypeIconMapper';
+import './progressCircle.scss';
 export const ProgressCircle = ({
     transaction,
     totalAmount,
@@ -14,23 +15,32 @@ export const ProgressCircle = ({
 }) => {
     const { setActive_category_store } = useApiStore();
     const percentage = Math.round((transaction.amount / totalAmount) * 100);
-    const ChangeProgress = () => {
-        setTransactionGridOpen((prev: boolean) => !(prev as boolean));
+    const ChangeProgressCategoryData = () => {
+        setTransactionGridOpen(true);
         setActive_category_store(transaction.transactions);
     };
+
+    const GetIcon = (cateogry: string) => {
+        return TransactionTypeIconMapper(cateogry);
+    };
+    const category = transactionCategory[transaction.category];
     return (
-        <button className='progress-bar' key={transaction.category} onClick={ChangeProgress}>
+        <button className='category-progress-component' key={transaction.category} onClick={ChangeProgressCategoryData}>
             <CircularProgressbarWithChildren
+                className='circle'
                 value={percentage}
                 styles={buildStyles({
                     pathTransitionDuration: 0.5,
                 })}
                 strokeWidth={6}
             >
-                <p>{`${Math.round(Math.abs(transaction.amount))}kr`}</p>
-                <strong>{`${percentage}%`}</strong>
+                <div className={`inner-circle ${category}`}>
+                    {GetIcon(category)}
+                    <p>{`${Math.round(transaction.amount)}kr`}</p>
+                    {transaction.amount < 0 && <strong>{`${percentage}%`}</strong>}
+                </div>
             </CircularProgressbarWithChildren>
-            <h3>{`${transactionCategory[transaction.category]}`}</h3>
+            <p className='category'>{`${category}`}</p>
         </button>
     );
 };
