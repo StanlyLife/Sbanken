@@ -1,10 +1,8 @@
-$sidebar-width: 200px;
+@import '/src/scss/variables.scss';
 .home-component {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    header {
-    }
     .home-component-sidebar {
         flex-shrink: 0;
         position: fixed;
@@ -17,5 +15,9 @@ $sidebar-width: 200px;
     .home-component-main {
         width: calc(100% - $sidebar-width);
         margin-left: $sidebar-width;
+        height: 100%;
+    }
+    .home-component-overview {
+        height: 100%;
     }
 }

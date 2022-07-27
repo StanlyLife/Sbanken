@@ -1,9 +1,14 @@
 .category-process-component {
     display: flex;
-    .progress-bar {
-        max-width: 150px;
+    height: 50%;
+    min-height: 550px;
+    .transactions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
     }
-
     .transaction-grid {
         flex-shrink: 0;
         overflow: hidden;

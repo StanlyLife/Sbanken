@@ -1,24 +1,126 @@
 .category-progress-component {
     width: 10%;
-    max-width: 150px;
-    min-width: 125px;
+    max-width: 175px;
+    min-width: 150px;
     background-color: transparent;
     transition: all 0.25s ease;
-    .CircularProgressbar-trail {
+    .circle .CircularProgressbar-trail {
         stroke: var(--color_b_100);
     }
-    .CircularProgressbar-path {
+    .circle .CircularProgressbar-path {
         stroke: var(--color_c_100);
     }
-    h3,
-    p,
-    strong {
-        font-size: 13px;
-        text-align: center;
-        word-wrap: break-word;
+    .inner-circle {
+        width: calc(100% - 15px);
+        height: calc(100% - 15px);
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: orange;
+        h3,
+        p,
+        strong {
+            font-size: 13px;
+            text-align: center;
+            word-wrap: break-word;
+            font-family: 'poppins', sans-serif;
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+            color: var(--color_b_100);
+        }
+        &.unknown {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.food {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.recreation {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.transport {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.games {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.learning {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.vipps {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.other {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.investment {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.dining {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.groceries {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.home {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.pet {
+            background-color: hsl(195, 11%, 93%);
+        }
+        &.apple {
+            background-color: hsl(195, 11%, 93%);
+        }
+        /*UNCOMMENT BELOW TO GET COLORED CATEGORIES*/
+        // &.unknown {
+        //     background-color: hsl(0, 0%, 83%);
+        // }
+        // &.food {
+        //     background-color: hsl(220, 66%, 80%);
+        // }
+        // &.recreation {
+        //     background-color: hsl(210, 67%, 80%);
+        // }
+        // &.transport {
+        //     background-color: hsl(20, 66%, 80%);
+        // }
+        // &.games {
+        //     background-color: hsl(40, 66%, 80%);
+        // }
+        // &.learning {
+        //     background-color: hsl(60, 66%, 80%);
+        // }
+        // &.vipps {
+        //     background-color: hsl(44, 72%, 72%);
+        // }
+        // &.other {
+        //     background-color: hsl(0, 0%, 83%);
+        // }
+        // &.investment {
+        //     background-color: hsl(120, 66%, 80%);
+        // }
+        // &.dining {
+        //     background-color: hsl(60, 56%, 72%);
+        // }
+        // &.groceries {
+        //     background-color: hsl(62, 67%, 80%);
+        // }
+        // &.home {
+        //     background-color: hsl(28, 85%, 79%);
+        // }
+        // &.pet {
+        //     background-color: hsl(200, 98%, 81%);
+        // }
+        // &.apple {
+        //     background-color: hsl(200, 6%, 90%);
+        // }
     }
-    h3 {
-        margin-top: 8px;
+    .category {
+        margin-top: 12px;
+        font-family: 'poppins', sans-serif;
     }
     &:hover {
         transform: scale(1.1);
