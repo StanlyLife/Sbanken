@@ -20,7 +20,6 @@ export const RecentTransactions = () => {
     useLayoutEffect(() => {
         if (transactions_store) {
             const slicedArray = transactions_store.items.slice(0, transactionsAmount);
-            console.log(slicedArray);
             setTransactionsArray(slicedArray);
         }
     }, [transactions_store]);

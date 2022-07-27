@@ -23,6 +23,7 @@ export const CategoryProgress = () => {
         setTransactionCategories(categorizedTransactions);
         setTotalAmount(categorizedTransactions.reduce((acc, curr) => (curr.amount < 0 ? (acc += curr.amount) : acc), 0));
     }, [transactions]);
+
     return (
         <div className='category-process-component'>
             <div className='transactions'>
