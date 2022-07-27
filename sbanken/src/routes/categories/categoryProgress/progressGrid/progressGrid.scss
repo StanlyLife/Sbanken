@@ -1,0 +1,57 @@
+.progress-grid-component {
+    top: 0;
+    height: 600px;
+    overflow: hidden;
+    width: 90%;
+    min-width: 500px;
+    max-width: 1280px;
+    background-color: var(--color_b_100);
+    border-radius: 24px;
+    padding: 24px;
+    position: relative;
+    .title {
+        color: var(--color_c_100);
+    }
+    .ag-root-wrapper {
+        height: 90%;
+    }
+    .ag-header-cell {
+        padding: 4px;
+        font-weight: 600;
+        font-family: 'Red hat display';
+    }
+    .ag-row {
+        transition: all 0.25s ease;
+        &:hover {
+            background-color: var(--color_b_200);
+        }
+        .ag-cell {
+            display: flex;
+            align-items: center;
+            padding: 4px;
+            font-family: 'Poppins', sans-serif;
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: var(--color_c_100);
+        width: 32px;
+        height: 32px;
+        border-radius: 500px 0px 0px 500px;
+        transition: all 0.5s ease;
+        svg {
+            transition: all 0.25s ease;
+        }
+        &:hover {
+            cursor: pointer;
+            background-color: var(--color_b_100);
+            color: var(--color_c_100);
+            svg {
+                transform: scale(1.25);
+            }
+        }
+    }
+}
