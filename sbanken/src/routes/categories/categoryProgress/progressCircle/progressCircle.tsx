@@ -1,6 +1,7 @@
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import { transactionCategory } from '../../../../enums/transactionCategory';
 import { categoryItem } from '../../../../interfaces/categoryItem';
+import { useApiStore } from '../../../../stores/useApiStore';
 
 export const ProgressCircle = ({
     transaction,
@@ -9,15 +10,16 @@ export const ProgressCircle = ({
 }: {
     transaction: categoryItem;
     totalAmount: number;
-    setTransactionGridOpen: Function;
+    setTransactionGridOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+    const { setActive_category_store } = useApiStore();
     const percentage = Math.round((transaction.amount / totalAmount) * 100);
+    const ChangeProgress = () => {
+        setTransactionGridOpen((prev: boolean) => !(prev as boolean));
+        setActive_category_store(transaction.transactions);
+    };
     return (
-        <button
-            className='progress-bar'
-            key={transaction.category}
-            onClick={() => setTransactionGridOpen((prev: boolean) => !(prev as boolean))}
-        >
+        <button className='progress-bar' key={transaction.category} onClick={ChangeProgress}>
             <CircularProgressbarWithChildren
                 value={percentage}
                 styles={buildStyles({
