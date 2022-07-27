@@ -12,4 +12,5 @@ export enum transactionCategory {
     groceries,
     home,
     pet,
+    apple,
 }
