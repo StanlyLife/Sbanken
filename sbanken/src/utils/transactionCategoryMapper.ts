@@ -27,7 +27,7 @@ const category = {
     mix: transactionCategory.food,
     restaurant: transactionCategory.dining,
     extra: transactionCategory.groceries,
-    applestore: transactionCategory.other,
+    applestore: transactionCategory.apple,
     bensinstasjon: transactionCategory.transport,
 };
 
@@ -40,7 +40,7 @@ export const TransactionCategoryMapper = (name: string) => {
 //Created function for further improvements and changes to name mapper
 const getRealName = (name: string) => {
     const n = name.toLowerCase();
-    if (n.indexOf('fra:')[0] || n.indexOf('til:')[0]) return 'vipps';
+    if (n.indexOf('fra: ') === 0 || n.indexOf('til: ') === 0) return 'vipps';
     if (n.includes('joker')) return 'joker';
     if (n.includes("mcdonald's")) return 'mcdonalds';
     if (n.includes('oda.com')) return 'oda';
@@ -56,6 +56,5 @@ const getRealName = (name: string) => {
     if (n.includes('extra')) return 'extra';
     if (n.includes('apple.com')) return 'applestore';
     if (n.includes('circle k')) return 'bensinstasjon';
-    // return name.split(' ')[0];
     return name;
 };
