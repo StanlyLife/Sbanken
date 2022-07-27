@@ -18,5 +18,8 @@ export const apiStore = create(
         //Transaction data
         transaction_data_store: '',
         setTransaction_data_store: (data) => set({ transaction_data_store: data }, false, 'set transaction data'),
+        //active category
+        active_category_store: '',
+        setActive_category_store: (data) => set({ active_category_store: data }, false, 'set active category data data'),
     })),
 );

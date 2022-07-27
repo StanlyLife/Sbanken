@@ -15,4 +15,7 @@ export const useApiStore = () => ({
     // Transaction Data
     transaction_data_store: apiStore((state) => state.transaction_data_store),
     setTransaction_data_store: apiStore((state) => state.setTransaction_data_store),
+    // active category
+    active_category_store: apiStore((state) => state.active_category_store),
+    setActive_category_store: apiStore((state) => state.setActive_category_store),
 });
