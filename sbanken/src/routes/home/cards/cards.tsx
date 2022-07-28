@@ -54,28 +54,34 @@ export const Cards = () => {
                 <button className='arrow left' onClick={() => ChangeDate(true)} title={nextMonthsName && nextMonthsName[0]}>
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
-                {startDate_store &&
-                    `${new Date(startDate_store).toLocaleDateString('no-nb', {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                    })} - `}
-                {endDate_store
-                    ? new Date(endDate_store).toLocaleDateString('no-nb', {
-                          weekday: 'long',
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                      })
-                    : //Default date
-                      `${new Date().toLocaleDateString('no-nb', {
-                          weekday: 'long',
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                      })} - siste 30 dager`}
-                <button className='arrow left' onClick={() => ChangeDate(false)} title={nextMonthsName && nextMonthsName[1]}>
+                <p className='date-time'>
+                    {startDate_store &&
+                        `${new Date(startDate_store).toLocaleDateString('no-nb', {
+                            weekday: 'long',
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                        })} - `}
+                    {endDate_store
+                        ? new Date(endDate_store).toLocaleDateString('no-nb', {
+                              weekday: 'long',
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric',
+                          })
+                        : //Default date
+                          `${new Date().toLocaleDateString('no-nb', {
+                              weekday: 'long',
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric',
+                          })} - siste 30 dager`}
+                </p>
+                <button
+                    className={`arrow left ${monthsToMove === 0 ? 'disabled' : ''}`}
+                    onClick={() => ChangeDate(false)}
+                    title={nextMonthsName && nextMonthsName[1]}
+                >
                     <FontAwesomeIcon icon={faChevronRight} />
                 </button>
             </div>

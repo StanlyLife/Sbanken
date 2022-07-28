@@ -9,6 +9,40 @@
     .date {
         text-align: center;
         color: var(--color_a_400);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .date-time {
+            width: 475px;
+            flex-shrink: 0;
+        }
+        .arrow {
+            width: 100%;
+            padding: 5px 0;
+            display: flex;
+            background-color: transparent;
+            transition: all 0.25s ease;
+            &.disabled {
+                pointer-events: none;
+                svg {
+                    color: var(--color_a_100);
+                }
+            }
+            svg {
+                transition: all 0.25s ease;
+                color: var(--color_a_400);
+            }
+            &:hover {
+                cursor: pointer;
+                svg {
+                    transform: scale(1.5);
+                    color: var(--color_b_100);
+                }
+            }
+            &:first-child {
+                justify-content: flex-end;
+            }
+        }
     }
     .card {
         width: 150px;
