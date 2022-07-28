@@ -1,4 +1,4 @@
-import { useApiStore } from '../../../stores/useApiStore';
+import { useApiStore } from '../../../../stores/useApiStore';
 
 export const Balance = () => {
     const { activeAccount_store } = useApiStore();

@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import { transactionReducedDataToGridData } from '../../../services/transactionReducedDataToGridData';
-import { useApiStore } from '../../../stores/useApiStore';
-import { transactionItem } from '../spendingOverview/transactionItem';
+import { transactionReducedDataToGridData } from '../../../../services/transactionReducedDataToGridData';
+import { useApiStore } from '../../../../stores/useApiStore';
+import { transactionItem } from '../../spendingOverview/transactionItem';
 
-export const MoneyOut = () => {
+export const MoneyIn = () => {
     const { transaction_data_store } = useApiStore();
-    const [moneyOut, setMoneyOut] = useState(0);
+    const [moneyIn, setMoneyIn] = useState(0);
     const [data, setData] = useState<any>();
 
     const getTotalAmountOfSpending = () => {
         if (data)
             return data?.reduce((acc: number, curr: transactionItem) => {
-                if (curr && curr.amount < 0) acc += curr.amount;
+                if (curr && curr.amount > 0) acc += curr.amount;
                 return acc;
             }, 0);
         return 0;
@@ -24,14 +24,14 @@ export const MoneyOut = () => {
     }, [transaction_data_store]);
 
     useEffect(() => {
-        setMoneyOut(getTotalAmountOfSpending().toString().replace('-', ''));
+        setMoneyIn(getTotalAmountOfSpending());
     }, [data]);
 
     return (
         <>
-            <div className='card money-out-component'>
-                <p className='key'>Penger ut</p>
-                <p className='value'>{Math.round(moneyOut)}kr</p>
+            <div className='card money-in-component'>
+                <p className='key'>Penger inn</p>
+                <p className='value'>{Math.round(moneyIn)}kr</p>
             </div>
         </>
     );
