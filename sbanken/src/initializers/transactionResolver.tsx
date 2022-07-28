@@ -17,7 +17,6 @@ export const TransactionResolver = () => {
     }, [transactions_store]);
     useEffect(() => {
         if (accounts_store) initializer();
-        if (!accounts_store) console.log('accounts not set!');
     }, [accounts_store, date_store]);
     const initializer = async () => {
         let url = baseUrl + getTransactionsUrl + accounts_store[0].accountId;
