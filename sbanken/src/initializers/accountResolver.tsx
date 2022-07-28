@@ -6,7 +6,7 @@ const axios = require('axios');
 export const AccountResolver = () => {
     const { bearerToken_store, setAccounts_store, setActiveAccount_store } = useApiStore();
     useEffect(() => {
-        initializer();
+        if (bearerToken_store) initializer();
     }, [bearerToken_store]);
     const initializer = async () => {
         const url = baseUrl + getAccountsUrl;
