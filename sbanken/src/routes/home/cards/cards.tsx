@@ -12,6 +12,7 @@ import { formatDateToIso } from '../../../services/formatDateToIso';
 export const Cards = () => {
     const { endDate_store, startDate_store, setStartDate_store, setEndDate_store, setDate_store } = useDateStore();
     const [monthsToMove, setMonthsToMove] = useState<number>(0);
+    const [nextMonthsName, setNextMonthsName] = useState<Array<string>>([]);
     const daysInMonth = (month: number, year: number) => {
         return new Date(year, month, 0).getDate();
     };
@@ -27,6 +28,10 @@ export const Cards = () => {
             endDate: endDate,
             key: 'selection',
         };
+        setNextMonthsName([
+            new Date(startDate.setMonth(startDate.getMonth() - 1)).toLocaleString('default', { month: 'long' }),
+            new Date(startDate.setMonth(startDate.getMonth() + 2)).toLocaleString('default', { month: 'long' }),
+        ]);
         setDate_store(selectionRange);
     }, [monthsToMove]);
 
@@ -46,7 +51,7 @@ export const Cards = () => {
                 <MoneyOut />
             </div>
             <div className='date'>
-                <button className='arrow left' onClick={() => ChangeDate(true)}>
+                <button className='arrow left' onClick={() => ChangeDate(true)} title={nextMonthsName && nextMonthsName[0]}>
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
                 {startDate_store &&
@@ -70,7 +75,7 @@ export const Cards = () => {
                           month: 'long',
                           day: 'numeric',
                       })} - siste 30 dager`}
-                <button className='arrow left' onClick={() => ChangeDate(false)}>
+                <button className='arrow left' onClick={() => ChangeDate(false)} title={nextMonthsName && nextMonthsName[1]}>
                     <FontAwesomeIcon icon={faChevronRight} />
                 </button>
             </div>
