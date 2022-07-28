@@ -11,8 +11,9 @@ import { useEffect, useState } from 'react';
 import { formatDateToIso } from '../../../services/formatDateToIso';
 import { getCardDates } from './localUtils/getCardDates';
 import { useApiStore } from '../../../stores/useApiStore';
+import { HeaderDatesDispaly } from './headerDatesDispaly';
 export const Cards = () => {
-    const { endDate_store, startDate_store, setStartDate_store, setEndDate_store, setDate_store } = useDateStore();
+    const { setStartDate_store, setEndDate_store, setDate_store } = useDateStore();
     const { transactions_store } = useApiStore();
     const [monthsToMove, setMonthsToMove] = useState<number>(-1);
     const [nextMonthsName, setNextMonthsName] = useState<Array<string>>([]);
@@ -45,29 +46,7 @@ export const Cards = () => {
                 <button className='arrow left' onClick={() => ChangeDate(true)} title={nextMonthsName && nextMonthsName[0]}>
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
-                <p className='date-time'>
-                    {startDate_store &&
-                        `${new Date(startDate_store).toLocaleDateString('no-nb', {
-                            weekday: 'long',
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric',
-                        })} - `}
-                    {endDate_store
-                        ? new Date(endDate_store).toLocaleDateString('no-nb', {
-                              weekday: 'long',
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric',
-                          })
-                        : //Default date
-                          `${new Date().toLocaleDateString('no-nb', {
-                              weekday: 'long',
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric',
-                          })} - siste 30 dager`}
-                </p>
+                <HeaderDatesDispaly />
                 <button
                     className={`arrow left ${monthsToMove >= -1 ? 'disabled' : ''}`}
                     onClick={() => ChangeDate(false)}
