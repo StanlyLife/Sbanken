@@ -30,8 +30,7 @@ export const SpendingGraph = () => {
     return (
         <div className='spending-graph-component'>
             <div className='transaction-wrapper'>
-                {data &&
-                    totalSpending &&
+                {data && totalSpending ? (
                     data.map((transaction: transactionItem, idx: number) => {
                         //We do not want to display money in
                         const transactionIsCost = transaction.amount < 0;
@@ -62,7 +61,16 @@ export const SpendingGraph = () => {
                             );
                         }
                         return <div key={idx}></div>;
-                    })}
+                    })
+                ) : (
+                    <div className='error-msg'>
+                        <h1>Ingen tilgjengelig data</h1>
+                        <p>
+                            Dette kan være fordi det er en feil, eller fordi du ikke har noen transaksjoner i dette
+                            tidsrommet
+                        </p>
+                    </div>
+                )}
             </div>
         </div>
     );
