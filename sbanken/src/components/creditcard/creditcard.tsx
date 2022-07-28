@@ -28,8 +28,8 @@ export const Creaditcard = ({
                     />
                     <div className='number'>{accountNumberWithSpaces}</div>
                     <div className='name'>{name}</div>
-                    <div className='from'>{balance}kr</div>
-                    <div className='to'>{available}kr</div>
+                    <div className='from'>{Math.round(+balance)}kr</div>
+                    <div className='to'>{Math.round(+available)}kr</div>
                 </div>
             </div>
         </div>
