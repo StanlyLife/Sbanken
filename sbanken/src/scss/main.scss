@@ -36,7 +36,8 @@ a {
 main {
     min-height: 100vh;
     max-height: 100vh;
-    overflow-x: hidden;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 .home-component {
     height: 100vh;
