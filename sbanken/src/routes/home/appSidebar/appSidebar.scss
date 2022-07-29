@@ -68,4 +68,29 @@
             }
         }
     }
+    .log-out-component {
+        position: absolute;
+        bottom: 0;
+        height: 48px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-weight: 600;
+        .logout {
+            width: 100%;
+            background-color: var(--color_a_200);
+            transition: all 0.25s ease;
+            svg {
+                margin-right: 8px;
+            }
+            &:hover {
+                background-color: var(--color_a_400);
+                cursor: pointer;
+            }
+            &:active {
+                background-color: var(--color_b_100);
+                color: var(--color_a_100);
+            }
+        }
+    }
 }
