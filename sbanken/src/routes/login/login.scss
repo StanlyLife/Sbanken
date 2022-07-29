@@ -1,0 +1,87 @@
+.login-component {
+    background-color: var(--color_a_200);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon {
+        transition: opacity 0.25s ease;
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+    .login-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 500px;
+        width: 400px;
+        color: var(--color_a_100);
+        background-color: var(--color_b_100);
+        box-shadow: var(--shadow_3);
+        border-radius: 24px;
+        .info {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .title {
+                font-family: 'Poppins', sans-serif;
+            }
+            hr {
+                width: 80%;
+                margin-top: 4px;
+                margin-bottom: 8px;
+                height: 2px;
+                border-radius: 4px;
+                background-color: var(--color_c_100);
+            }
+        }
+        .form {
+            width: 75%;
+            .form-row {
+                margin-top: 22px;
+                .input {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    input {
+                        background-color: transparent;
+                        border-bottom: 2px solid var(--color_c_100);
+                        width: 90%;
+                        outline: none;
+                        color: var(--color_a_100);
+                        &:focus {
+                            border-bottom: 2px solid var(--color_a_100);
+                        }
+                    }
+                }
+            }
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+            .input {
+                button {
+                    background-color: transparent;
+                    border: 2px solid var(--color_c_100);
+                    color: var(--color_a_100);
+                    width: 100px;
+                    height: 32px;
+                    border-radius: 4px;
+                    transition: border 0.25s ease;
+                    &:hover {
+                        border: 2px solid var(--color_a_100);
+                        cursor: pointer;
+                    }
+                }
+                .icon {
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}
