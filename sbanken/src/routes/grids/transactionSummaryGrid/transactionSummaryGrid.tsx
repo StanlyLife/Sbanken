@@ -14,9 +14,19 @@ export const TransactionSummaryGrid = () => {
     }, [transaction_data_store]);
 
     const [columnDefs] = useState([
-        { field: 'name', flex: 1 },
-        { field: 'amount', flex: 1 },
-        { field: 'count', flex: 1 },
+        { field: 'name', flex: 2, headerName: 'Navn', sortable: true },
+        {
+            field: 'amount',
+            flex: 1,
+            headerName: 'Kostnad',
+            cellRenderer: (param: any) => {
+                console.log('param');
+                console.log(param.data);
+                return `${Math.round(param.data.amount)}kr`;
+            },
+            sortable: true,
+        },
+        { field: 'count', flex: 1, headerName: 'Antall transaksjoner', sortable: true },
     ]);
 
     return (
