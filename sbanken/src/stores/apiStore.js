@@ -31,5 +31,8 @@ export const apiStore = create(
         //active category
         active_category_store: '',
         setActive_category_store: (data) => set({ active_category_store: data }, false, 'set active category data data'),
+        //Error store
+        errorMessage_store: {},
+        setErrorMessage_store: (data) => set({ errorMessage_store: data }, false, 'set error messages'),
     })),
 );

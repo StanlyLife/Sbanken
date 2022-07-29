@@ -21,4 +21,9 @@ export const useApiStore = () => ({
     // active category
     active_category_store: apiStore((state) => state.active_category_store),
     setActive_category_store: apiStore((state) => state.setActive_category_store),
+    //Error messages
+    /* if you happen to come across this code, this error handling is terrible */
+    /* it was implemented to solve 1 problem in 1 component and should not be replicated */
+    errorMessage_store: apiStore((state) => state.errorMessage_store),
+    setErrorMessage_store: apiStore((state) => state.setErrorMessage_store),
 });
