@@ -45,3 +45,24 @@ main {
 a {
     color: whitesmoke;
 }
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color_b_100) #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color_b_100);
+    border-radius: 10px;
+}
