@@ -1,8 +1,18 @@
 import create from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+const loginInformation = {
+    apiKey: '',
+    apiSecret: '',
+    isTestData: false,
+    isLoggedIn: false,
+};
+
 export const apiStore = create(
     devtools((set, get) => ({
+        //Login
+        login_store: loginInformation,
+        setLogin_store: (data) => set({ login_store: data }, false, 'set login information'),
         //bearertoken
         bearerToken_store: '',
         setBearerToken_store: (data) => set({ bearerToken_store: data }, false, 'set bearer token'),

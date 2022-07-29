@@ -1,5 +1,8 @@
 import { apiStore } from './apiStore';
 export const useApiStore = () => ({
+    //login
+    login_store: apiStore((state) => state.login_store),
+    setLogin_store: apiStore((state) => state.setLogin_store),
     // Bearertoken
     bearerToken_store: apiStore((state) => state.bearerToken_store),
     setBearerToken_store: apiStore((state) => state.setBearerToken_store),
