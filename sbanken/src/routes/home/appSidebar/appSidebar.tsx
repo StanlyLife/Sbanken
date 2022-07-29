@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faTable } from '@fortawesome/free-solid-svg-icons';
 import './appSidebar.scss';
 import { NavLink } from 'react-router-dom';
+import { Logout } from './logout/logout';
 export const AppSidebar = () => {
     return (
         <aside className='app-sidebar-component'>
@@ -33,6 +34,7 @@ export const AppSidebar = () => {
                     </div>
                 </NavLink>
             </div>
+            <Logout />
         </aside>
     );
 };
