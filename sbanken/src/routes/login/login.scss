@@ -59,6 +59,12 @@
                     }
                 }
             }
+            .errors {
+                height: 60px;
+                padding-top: 12px;
+                text-align: center;
+                color: var(--color_c_100);
+            }
         }
         .buttons {
             display: flex;
