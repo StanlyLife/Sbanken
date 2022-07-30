@@ -20,7 +20,7 @@ export const Cards = () => {
             setStartDate_store(formatDateToIso(startDate));
             setEndDate_store(formatDateToIso(endDate));
             setNextMonthsName([previousMonthName, nextMonthName]);
-            setDate_store(selectionRange);
+            setDate_store([selectionRange]);
         }
     }, [monthsToMove]);
 
