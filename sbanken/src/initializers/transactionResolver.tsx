@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTestTransaction } from '../hooks/useTestTransaction';
 import { useTestTransactionData } from '../hooks/useTestTransactionData';
 import { transactionReducer } from '../services/transactionReducer';
 import { useApiStore } from '../stores/useApiStore';
@@ -14,13 +15,13 @@ export const TransactionResolver = () => {
         if (transactions_store) {
             const result = transactionReducer(transactions_store.items);
             setTransaction_data_store(result);
-            console.log(result);
         }
     }, [transactions_store]);
     useEffect(() => {
         if (accounts_store) initializer();
     }, [accounts_store, date_store]);
     useTestTransactionData();
+    useTestTransaction();
 
     const initializer = async () => {
         let url = baseUrl + getTransactionsUrl + accounts_store[0].accountId;
