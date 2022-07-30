@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTestAccount } from '../hooks/useTestAccount';
 import { useApiStore } from '../stores/useApiStore';
 import { getAxiosConfig } from '../utils/getAxiosConfig';
 import { baseUrl, getAccountsUrl } from '../utils/sbankenApi';
@@ -8,6 +9,7 @@ export const AccountResolver = () => {
     useEffect(() => {
         if (bearerToken_store) initializer();
     }, [bearerToken_store]);
+    useTestAccount();
     const initializer = async () => {
         const url = baseUrl + getAccountsUrl;
         axios(getAxiosConfig('get', url, bearerToken_store)).then(
@@ -25,18 +27,5 @@ export const AccountResolver = () => {
             },
         );
     };
-    return (
-        <>
-            {/* {accounts_store &&
-                accounts_store.map((account: AccountItem) => {
-                    return (
-                        <div>
-                            <p>{account.accountNumber}</p>
-                            <p>{account.available}</p>
-                            <p>{account.balance}</p>
-                        </div>
-                    );
-                })} */}
-        </>
-    );
+    return <></>;
 };
