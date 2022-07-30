@@ -6,7 +6,7 @@ export const authResolver = () => {
     const { setBearerToken_store, login_store, setLogin_store, setErrorMessage_store } = useApiStore();
     const [amountOfFailedLogins, setAmountOfFailedLogins] = useState<number>(1);
     useEffect(() => {
-        if (!login_store.apiKey || !login_store.apiSecret) return;
+        if (!login_store.apiKey || !login_store.apiSecret || login_store.isTestData === true) return;
         initializer();
     }, [login_store]);
     const initializer = async () => {

@@ -50,6 +50,17 @@ export const Login = () => {
         setLocalStoreData();
         setLogin_store(loginObject);
     };
+
+    const Test = () => {
+        const loginObject: loginInformation = {
+            apiKey: apiKeyInput?.current?.value || '',
+            apiSecret: apiSecretInput?.current?.value || '',
+            isTestData: true,
+            isLoggedIn: true,
+        };
+        setLogin_store(loginObject);
+    };
+
     return (
         <div className='login-component'>
             <div className='login-block'>
@@ -82,7 +93,9 @@ export const Login = () => {
                         </button>
                     </div>
                     <div className='input'>
-                        <button className='test'>Test</button>
+                        <button className='test' onClick={Test}>
+                            Test
+                        </button>
                         <FontAwesomeIcon
                             icon={faCircleQuestion}
                             className='icon'
