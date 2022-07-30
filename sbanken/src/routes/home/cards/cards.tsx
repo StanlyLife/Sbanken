@@ -10,7 +10,7 @@ import { HeaderDatesDispaly } from './headerDatesDispaly';
 import { CardCollection } from './cardsCollection/cardsCollection';
 export const Cards = () => {
     const { setStartDate_store, setEndDate_store, setDate_store } = useDateStore();
-    const { transactions_store } = useApiStore();
+    const { transactions_store, login_store } = useApiStore();
     const [monthsToMove, setMonthsToMove] = useState<number>(-1);
     const [nextMonthsName, setNextMonthsName] = useState<Array<string>>([]);
 
@@ -33,17 +33,25 @@ export const Cards = () => {
         <div className='cards-component'>
             <CardCollection />
             <div className='date'>
-                <button className='arrow left' onClick={() => ChangeDate(true)} title={nextMonthsName && nextMonthsName[0]}>
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                </button>
+                {!login_store.isTestData && (
+                    <button
+                        className='arrow left'
+                        onClick={() => ChangeDate(true)}
+                        title={nextMonthsName && nextMonthsName[0]}
+                    >
+                        <FontAwesomeIcon icon={faChevronLeft} />
+                    </button>
+                )}
                 <HeaderDatesDispaly />
-                <button
-                    className={`arrow left ${monthsToMove >= -1 ? 'disabled' : ''}`}
-                    onClick={() => ChangeDate(false)}
-                    title={nextMonthsName && nextMonthsName[1]}
-                >
-                    <FontAwesomeIcon icon={faChevronRight} />
-                </button>
+                {!login_store.isTestData && (
+                    <button
+                        className={`arrow left ${monthsToMove >= -1 ? 'disabled' : ''}`}
+                        onClick={() => ChangeDate(false)}
+                        title={nextMonthsName && nextMonthsName[1]}
+                    >
+                        <FontAwesomeIcon icon={faChevronRight} />
+                    </button>
+                )}
             </div>
         </div>
     );
