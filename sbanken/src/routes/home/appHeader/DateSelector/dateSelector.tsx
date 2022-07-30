@@ -23,7 +23,6 @@ export const DateSelector = ({
         setStartDate_store(formatDateToIso([date.selection][0].startDate));
         setEndDate_store(formatDateToIso([date.selection][0].endDate));
     };
-
     return (
         <>
             {date_store && (
@@ -33,7 +32,12 @@ export const DateSelector = ({
                         if (e.target === e.currentTarget) setDisplayCalendar((prev: boolean) => !prev);
                     }}
                 >
-                    <DateRangePicker className='date-selector' ranges={date_store} onChange={handleSelect} />
+                    <DateRangePicker
+                        className='date-selector'
+                        ranges={date_store}
+                        maxDate={new Date(new Date().setDate(new Date().getDate() - 1))}
+                        onChange={handleSelect}
+                    />
                 </div>
             )}
         </>
