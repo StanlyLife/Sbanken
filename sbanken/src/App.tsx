@@ -2,6 +2,8 @@ import React from 'react';
 import { authResolver } from './initializers/authResolver';
 import './scss/main.scss';
 import './scss/fonts.scss';
+import './scss/fonts.scss';
+import './scss/app.scss';
 import 'react-circular-progressbar/dist/styles.css';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -18,6 +20,11 @@ function App() {
     return (
         <div className='App-Root'>
             <header className='App-header'></header>
+            <div className='not-mobile-friendly'>
+                <h1>Denne applikasjonen krever at bredden på vinduet er over 1100px</h1>
+                <hr />
+                <p>vennligst gjør vinduet større</p>
+            </div>
             <main>
                 {login_store.isLoggedIn && login_store ? (
                     <>
