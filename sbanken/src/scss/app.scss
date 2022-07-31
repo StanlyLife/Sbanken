@@ -1,4 +1,7 @@
 .App-Root {
+    .not-mobile-friendly {
+        display: none;
+    }
     @media only screen and (max-width: 1076px) {
         .not-mobile-friendly {
             position: fixed;
