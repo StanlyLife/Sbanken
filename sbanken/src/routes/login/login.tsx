@@ -73,13 +73,29 @@ export const Login = () => {
                     <div className='form-row'>
                         <label>API Key</label>
                         <div className='input'>
-                            <input ref={apiKeyInput} /> <FontAwesomeIcon className='icon' icon={faCircleQuestion} />
+                            <input ref={apiKeyInput} />{' '}
+                            <a
+                                title='Howto: Api key'
+                                target='_blank'
+                                href='https://github.com/StanlyLife/Sbanken#:~:text=Personal/ApiBeta/Info/-,Api%20Key,the%20image%20(The%20api%20key%20shown%20is%20not%20my%20actual%20key),-Api%20Secret'
+                                rel='noreferrer'
+                            >
+                                <FontAwesomeIcon className='icon' icon={faCircleQuestion} />
+                            </a>
                         </div>
                     </div>
                     <div className='form-row'>
                         <label>API Secret</label>
                         <div className='input'>
-                            <input ref={apiSecretInput} /> <FontAwesomeIcon className='icon' icon={faCircleQuestion} />
+                            <input ref={apiSecretInput} />{' '}
+                            <a
+                                title='Howto: Api secret'
+                                target='_blank'
+                                href='https://github.com/StanlyLife/Sbanken#:~:text=my%20actual%20key)-,Api%20Secret,Order%20new%20password,-Fill%20out%20the'
+                                rel='noreferrer'
+                            >
+                                <FontAwesomeIcon className='icon' icon={faCircleQuestion} />
+                            </a>
                         </div>
                     </div>
                     <div className='errors'>
